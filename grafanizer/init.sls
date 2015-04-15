@@ -43,8 +43,9 @@ grafanizer:
     - group: root
     - mode: 600
 
+# Moving this out to a salt job
 python /root/grafanizer/grafanizer:
-  cron.present:
+  cron.absent:
     - user: root
     - minute: 0
     - hour: '*/12'
