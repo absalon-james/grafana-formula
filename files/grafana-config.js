@@ -23,7 +23,7 @@ function (Settings) {
             password: ''
         },
         plugins: {
-            panels: []
+            panels: ['warning']
         }
     });
 });

@@ -27,6 +27,7 @@ apache2-utils:
 /etc/nginx/sites-available/grafana:
   file.managed:
     - source: salt://grafana/nginx/files/grafana
+    - template: jinja
     - require:
       - pkg: nginx
 

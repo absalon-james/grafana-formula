@@ -27,6 +27,15 @@ grafana-{{ gr_version }}:
     - group: root
     - mode: 644
 
+grafana_warning_panel_plugin:
+  git.latest:
+    - name: https://github.com/absalon-james/grafana-warning-panel-plugin.git
+    - rev: {{ salt['pillar.get']('grafana_warning_panel_plugin_branch', 'master') }}
+    - target: /usr/share/nginx/grafana-{{ gr_version}}/app/panels/warning
+    - require:
+      - pkg: git
+      - archive: grafana-{{ gr_version }}
+
 /usr/share/nginx/grafana:
   file.symlink:
     - target: /usr/share/nginx/grafana-{{ gr_version }}

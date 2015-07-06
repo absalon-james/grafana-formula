@@ -24,7 +24,7 @@ pyparsing:
 grafanizer:
   git.latest:
     - name: https://github.com/absalon-james/grafanizer.git
-    - rev: master
+    - rev: {{ salt['pillar.get']('grafanizer_branch', 'master') }}
     - target: /root/grafanizer
     - require:
       - pkg: git

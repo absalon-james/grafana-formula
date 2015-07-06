@@ -1,3 +1,4 @@
+{%- set graphite_timeout = salt['pillar.get']('nginx:graphite:proxy_read_timeout', '300') -%}
 upstream graphite {
     server 127.0.0.1:8888;
 }
@@ -22,6 +23,7 @@ server {
         proxy_pass http://graphite;
         proxy_redirect off;
         proxy_set_header Host $host;
+        proxy_read_timeout {{ graphite_timeout }};
     }
     location /elasticsearch/ {
         rewrite /elasticsearch/(.*) /$1 break;
