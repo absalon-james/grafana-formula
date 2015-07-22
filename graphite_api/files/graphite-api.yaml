@@ -3,7 +3,7 @@
 ######################################
 search_index: /dev/null
 finders:
-  - blueflood.TenantBluefloodFinder
+  - cached_blueflood.TenantBluefloodFinder
 functions:
   - graphite_api.functions.SeriesFunctions
   - graphite_api.functions.PieFunctions

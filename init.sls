@@ -4,6 +4,7 @@ include:
   - grafana.common
   - grafana.elasticsearch
   - grafana.nginx
+  - grafana.memcached
   - grafana.graphite_api
   - grafana.grafanizer
 
