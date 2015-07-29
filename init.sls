@@ -16,8 +16,6 @@ grafana-{{ gr_version }}:
     - archive_format: tar
     - tar_options: xf
     - if_missing: /usr/share/nginx/grafana-{{ gr_version }}
-    - user: root
-    - group: root
     - require:
       - pkg: nginx
 

@@ -8,6 +8,7 @@ eventlet:
 
 cerberus:
   pip.installed:
+    - name: cerberus == 0.8
     - require:
       - pkg: python-pip
 
