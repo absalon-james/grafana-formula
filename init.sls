@@ -54,7 +54,7 @@ cp /root/grafanizer/sample_grafana_dashboards/default.js /usr/share/nginx/grafan
 
 run_grafanizer:
   cmd.run:
-    - name: python /root/grafanizer/grafanizer
+    - name: python /root/grafanizer/grafanizer/grafanizer
     - require:
       - service: service_elasticsearch
       - git: grafanizer
